@@ -1,0 +1,476 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr">
+
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+  <meta charset="utf-8" />
+<link rel="shortlink" href="http://brioteam.com/node/15" />
+<link rel="shortcut icon" href="http://brioteam.com/sites/all/themes/skeletontheme/brioteam-logo.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="http://brioteam.com/how-install-teamspeak-3-server-linux" />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="description" content="TeamSpeak 3 was released in 2011. It has many good features compared to older version TeamSpeak 2. It&#039;s good for clans and gaming communities, take it to the next level with your community. But why not for offices and work also, Where you have to be connected with your work mates 24/7. This is one way to have secure and controlled environment for your work or community. This guide will lead you how to install TeamSpeak 3 for linux server or home computer." />
+  <title>How to install TeamSpeak 3 server on Linux | Brio Team</title>
+  <link type="text/css" rel="stylesheet" href="http://brioteam.com/sites/default/files/css/css_pbm0lsQQJ7A7WCCIMgxLho6mI_kBNgznNUWmTWcnfoE.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://brioteam.com/sites/default/files/css/css_botNHIYRQPys-RH2iA3U4LbV9bPNRS64tLAs8ec1ch8.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://brioteam.com/sites/default/files/css/css_MnXiytJtb186Ydycnpwpw34cuUsHaKc80ey5LiQXhSY.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://brioteam.com/sites/default/files/css/css_igjrsEf4M2O9j7v41Bw5JbjuDlKMrlguvepyh_eq72Q.css" media="all" />
+  <script type="text/javascript" src="http://brioteam.com/sites/default/files/js/js_xAPl0qIk9eowy_iS9tNkCWXLUVoat94SQT48UBCFkyQ.js"></script>
+<script type="text/javascript" src="http://brioteam.com/sites/default/files/js/js_R9UbiVw2xuTUI0GZoaqMDOdX0lrZtgX-ono8RVOUEVc.js"></script>
+<script type="text/javascript" src="http://brioteam.com/sites/default/files/js/js_tzEGTRyjbSNo4GS4Eh6_ZJb5BgaDvQF9UshkdxwThp0.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var switchTo5x = true;
+//--><!]]>
+</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+if (stLight !== undefined) { stLight.options({"publisher":"dr-33af74f6-e2ec-8bcd-800c-b2c4b57924f","version":"5x"}); }
+//--><!]]>
+</script>
+<script type="text/javascript" src="http://brioteam.com/sites/default/files/js/js_rv_BKYv7yieH0IgHddhWHDC-bWGan8yiJbusyOpr0mw.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-7062070-1"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"skeletontheme","theme_token":"3x-2fklcKLyvVwJFZ7hzvRishEqYJUlgIcb1dsdR3PQ","js":{"modules\/statistics\/statistics.js":1,"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/admin_menu\/admin_devel\/admin_devel.js":1,"sites\/all\/modules\/disqus\/disqus.js":1,"0":1,"http:\/\/w.sharethis.com\/button\/buttons.js":1,"1":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"2":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/themes\/skeletontheme\/css\/skeleton.css":1,"sites\/all\/themes\/skeletontheme\/css\/style.css":1,"sites\/all\/themes\/skeletontheme\/css\/layout.css":1,"sites\/all\/themes\/skeletontheme\/color\/colors.css":1}},"disqus":{"domain":"brioteam","url":"http:\/\/brioteam.com\/how-install-teamspeak-3-server-linux","title":"How to install TeamSpeak 3 server on Linux","identifier":"node\/15"},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip"},"statistics":{"data":{"nid":"15"},"url":"\/modules\/statistics\/statistics.php"}});
+//--><!]]>
+</script>
+</head>
+<body class="html not-front not-logged-in two-sidebars page-node page-node- page-node-15 node-type-wp-blog" >
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    
+<div id="wrap">
+    <div class="container">
+        
+        <!-- #header -->
+        <div id="header" class="sixteen columns clearfix">
+            <div class="inner" >
+    
+
+
+                                <div id="name-and-slogan">
+                
+                                
+                    		<div class="four columns">
+                  <a href="/" title="Home" rel="home" id="logo">
+			<img src="http://brioteam.com/sites/all/themes/skeletontheme/images/brioteam-logo.png" alt="Home" /> 
+                  </a>
+
+                    <div id="site-name">
+
+                    <a href="/" title="Home" rel="home">Brio Team</a>
+                    </div>
+                                    </div>
+                                                <div id="navigation" class="eleven columns">
+                             <ul class="menu">
+				<li class="first last leaf"><a href="http://brioteam.com/tag/linux" title="All Linux News" class="active">LINUX</a></li>
+				<li class="first last leaf"><a href="http://brioteam.com/tag/android" title="Android coverage" class="active">ANDROID</a></li>
+				<li class="first last leaf"><a href="http://brioteam.com/tag/life" title="Bt Life" class="active">LIFE</a></li>
+				<li class="first last leaf"><a href="http://brioteam.com/tag/versus" title="BrioTeam Versus comparison" class="active">VERSUS</a></li>
+				<li class="first last leaf notnormal"><a href="https://www.facebook.com/BrioTeam" title="BT's Facebook fanpage" class="active">FACEBOOK</a></li>
+				<li class="first last leaf notnormal"><a href="https://twitter.com/BrioTeam" title="Brio Team's Twitter" class="active">TWITTER</a></li>
+			     </ul>
+                            </div>
+                </div>
+                
+            </div>
+	
+<!-- /#header -->
+     </div>
+     </div>
+<!-- /#container -->
+     <div class="container">
+        <div id="content" class="sixteen columns">
+	                            <div id="breadcrumb"><span style="float:left;"><h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a><span class="sep">»</span><a href="/blog">Blog</a><span class="sep">»</span><a href="/blog/2014">2014</a><span class="sep">»</span><a href="/blog/2014/02">February</a><span class="sep">»</span><a href="/blog/2014/02/16">16<sup>th</sup></a><span class="sep">»</span>How to install TeamSpeak 3 server on Linux</div></span><span style="float:right;"></span></div>
+            	</div>
+	<div id="gradients-line" class="sixteen columns clearfix">
+        <div class="sixteen columns center">
+
+
+                
+            
+
+            
+            
+
+            
+    
+            <div class="clear"></div>
+                
+        </div>      
+
+                        <!-- #sidebar-first -->
+        <div id="sidebar" class="four columns">
+              <div class="region region-sidebar-first">
+    <div id="block-views-featuredarticlesblock-block" class="block block-views">
+
+    <h2>— FEATURED — </h2>
+  
+  <div class="content">
+    <div class="view view-featuredarticlesblock view-id-featuredarticlesblock view-display-id-block view-dom-id-f3eb3c3ac2f780055ae11776cc1fafb9">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <h4 class="views-field views-field-title">        <span class="field-content"><a href="/experience-life-escaping-comfort-zone">Experience Life by Escaping the Comfort Zone</a></span>  </h4>  
+  <div class="views-field views-field-field-img">        <div class="field-content"><a href="/experience-life-escaping-comfort-zone"><img src="http://brioteam.com/sites/default/files/styles/left-images/public/EscapeTheComfortZone.png?itok=DBdl8Q8T" width="388" height="127" alt="How to find the right path to your life and how to escape your comfort zone" title="How to find the right path to your life and how to escape your comfort zone" /></a></div>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <h4 class="views-field views-field-title">        <span class="field-content"><a href="/keyboard-shortcuts-cheat-sheet-lxdeopenbox">Keyboard shortcuts cheat sheet of LXDE/Openbox.</a></span>  </h4>  
+  <div class="views-field views-field-field-img">        <div class="field-content"><a href="/keyboard-shortcuts-cheat-sheet-lxdeopenbox"><img src="http://brioteam.com/sites/default/files/styles/left-images/public/CheatSheetKeyBoardShortcutsLXDE-openbox.png?itok=lVspYILS" width="388" height="127" alt="Lubuntu cheatsheet for quick keyboard shortcuts on lxde or openbox environment" title="Lubuntu cheatsheet for quick keyboard shortcuts on lxde or openbox environment" /></a></div>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd views-row-last">
+      
+  <h4 class="views-field views-field-title">        <span class="field-content"><a href="/12-easy-steps-smoke-free-life">12 Easy Steps to a Smoke-free Life</a></span>  </h4>  
+  <div class="views-field views-field-field-img">        <div class="field-content"><a href="/12-easy-steps-smoke-free-life"><img src="http://brioteam.com/sites/default/files/styles/left-images/public/HowToQuitSmoking.jpg?itok=4HwtG6xH" width="388" height="127" alt="" /></a></div>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+</div>
+<div id="block-block-5" class="block block-block">
+
+    
+  <div class="content">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- BrioBetweenBetween --><p><ins class="adsbygoogle" style="display:inline-block;width:250px;height:250px" data-ad-client="ca-pub-5070439140940212" data-ad-slot="9518718886"></ins></p>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>  </div>
+</div>
+<div id="block-views-latest-items-block-block" class="block block-views">
+
+    <h2>— RECENTLY — </h2>
+  
+  <div class="content">
+    <div class="view view-latest-items-block view-id-latest_items_block view-display-id-block view-dom-id-16cd67220a81bdc2b350d03955fcfde2">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <h4>        <span><a href="/ovo-timer-android-application-fast-and-minimalistic-countdown">Ovo Timer is an android application for fast and minimalistic countdown</a></span>  </h4>  
+  <div class="views-field views-field-field-img">        <div class="field-content"><a href="/ovo-timer-android-application-fast-and-minimalistic-countdown"><img src="http://brioteam.com/sites/default/files/styles/left-images/public/AndroidOvoTimerAppForCountDownFree.png?itok=w3MFxp1T" width="388" height="127" alt="Android Ovo Timer App for free and fast countdown" title="Android Ovo Timer App for free and fast countdown" /></a></div>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <h4>        <span><a href="/benjamin-franklin-daily-schedule-getting-something-started">Benjamin Franklin’s Great Daily Schedule for Getting Something Started</a></span>  </h4>  
+  <div class="views-field views-field-field-img">        <div class="field-content"><a href="/benjamin-franklin-daily-schedule-getting-something-started"><img src="http://brioteam.com/sites/default/files/styles/left-images/public/Ben-Franklin-DailySchedule-Getting-Stuff.png?itok=KDF3ERpJ" width="388" height="127" alt="Benjamin Franklin forefather&#039;s daily schedule" title="Benjamin Franklin forefather&#039;s daily schedule" /></a></div>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <h4>        <span><a href="/five-steps-make-faster-old-computer-linux-mint">Linux Mint 17 — 5 Steps to Make Qiana Faster on Old Computer</a></span>  </h4>  
+  <div class="views-field views-field-field-img">        <div class="field-content"><a href="/five-steps-make-faster-old-computer-linux-mint"><img src="http://brioteam.com/sites/default/files/styles/left-images/public/HowToMakeYourLinuxMintWorkFasterFiveStepsTutorial.png?itok=i0WxFrch" width="388" height="127" alt="Five Steps to speed up your Linux Mint" title="Five Steps to speed up your Linux Mint" /></a></div>  </div>  </div>
+  <div class="views-row views-row-4 views-row-even">
+      
+  <h4>        <span><a href="/aviate-android-launcher-app-leaves-beta-stage-0">The Aviate Android Launcher App Leaves the Beta Stage</a></span>  </h4>  
+  <div class="views-field views-field-field-img">        <div class="field-content"><a href="/aviate-android-launcher-app-leaves-beta-stage-0"><img src="http://brioteam.com/sites/default/files/styles/left-images/public/AviateAndroidLauncherYouShouldTry_0.png?itok=u5PEFr7-" width="388" height="127" alt="Aviate Android Launcher Application" title="Aviate Android Launcher Application" /></a></div>  </div>  </div>
+  <div class="views-row views-row-5 views-row-odd">
+      
+  <h4>        <span><a href="/how-encrypt-files-command-line-ccrypt">How to Encrypt Files from Command line with ccrypt</a></span>  </h4>  
+  <div class="views-field views-field-field-img">        <div class="field-content"><a href="/how-encrypt-files-command-line-ccrypt"><img src="http://brioteam.com/sites/default/files/styles/left-images/public/HowToEncryptFilesLinuxCCrypt.png?itok=tQXP9-Ds" width="388" height="127" alt="How to Encrypt Files from Command line with ccrypt" title="How to Encrypt Files from Command line with ccrypt" /></a></div>  </div>  </div>
+  <div class="views-row views-row-6 views-row-even">
+      
+  <h4>        <span><a href="/efficient-multitasking-without-rooting-nexus-7-tablet">Efficient Multitasking without Rooting on Nexus 7 tablet</a></span>  </h4>  
+  <div class="views-field views-field-field-img">        <div class="field-content"><a href="/efficient-multitasking-without-rooting-nexus-7-tablet"><img src="http://brioteam.com/sites/default/files/styles/left-images/public/AsusNexus7-2013-multitasking.jpg?itok=sLuh6tUI" width="388" height="127" alt="How to multitask on nexus 7 2013 version" title="How to multitask on nexus 7 2013 version" /></a></div>  </div>  </div>
+  <div class="views-row views-row-7 views-row-odd">
+      
+  <h4>        <span><a href="/linux-versus-freebsd-comprehensive-comparison">Linux versus FreeBSD — A Comprehensive Comparison</a></span>  </h4>  
+  <div class="views-field views-field-field-img">        <div class="field-content"><a href="/linux-versus-freebsd-comprehensive-comparison"><img src="http://brioteam.com/sites/default/files/styles/left-images/public/LinuxVSfreebsdWhichOneIsBetter2.jpg?itok=ATYGywpw" width="388" height="127" alt="Linux vs FreeBSD - Significant differences between these two operating systems" title="Linux vs FreeBSD - Significant differences between these two operating systems" /></a></div>  </div>  </div>
+  <div class="views-row views-row-8 views-row-even">
+      
+  <h4>        <span><a href="/open-hexagon-open-source-alternative-super-hexagon">Open-Hexagon — Open-Source Alternative to Super Hexagon</a></span>  </h4>  
+  <div class="views-field views-field-field-img">        <div class="field-content"><a href="/open-hexagon-open-source-alternative-super-hexagon"><img src="http://brioteam.com/sites/default/files/styles/left-images/public/OpenSourceSuperHexagon.jpg?itok=AqM9a59Y" width="388" height="127" alt="Vittorio Romeo Open-Hexagon" title="Super hexagon alternative linux game Open-Hexagon" /></a></div>  </div>  </div>
+  <div class="views-row views-row-9 views-row-odd">
+      
+  <h4>        <span><a href="/turn-your-web-browser-night-friendly-these-addons">Turn Your Web Browser Night Friendly with these Addons</a></span>  </h4>  
+  <div class="views-field views-field-field-img">        <div class="field-content"><a href="/turn-your-web-browser-night-friendly-these-addons"><img src="http://brioteam.com/sites/default/files/styles/left-images/public/WebBrowser-NightFriendly-ForEyes-Addons.jpg?itok=g8A7S0SK" width="388" height="127" alt="Night-friendly addons to dim your web browser colors" title="Night-friendly addons to dim your web browser colors" /></a></div>  </div>  </div>
+  <div class="views-row views-row-10 views-row-even">
+      
+  <h4>        <span><a href="/12-easy-steps-smoke-free-life">12 Easy Steps to a Smoke-free Life</a></span>  </h4>  
+  <div class="views-field views-field-field-img">        <div class="field-content"><a href="/12-easy-steps-smoke-free-life"><img src="http://brioteam.com/sites/default/files/styles/left-images/public/HowToQuitSmoking.jpg?itok=4HwtG6xH" width="388" height="127" alt="" /></a></div>  </div>  </div>
+  <div class="views-row views-row-11 views-row-odd">
+      
+  <h4>        <span><a href="/6-best-linux-alternatives-microsoft-windows-xp">6 Best Linux Alternatives for Microsoft Windows XP</a></span>  </h4>  
+  <div class="views-field views-field-field-img">        <div class="field-content"><a href="/6-best-linux-alternatives-microsoft-windows-xp"><img src="http://brioteam.com/sites/default/files/styles/left-images/public/TheBest-WindowsXP-Alternatives-6-Linux-Operating-Systems.jpg?itok=1TchEpxD" width="388" height="127" alt="April is coming choose and it means that Windows XP support will end" title="April is coming choose and it means that Windows XP support will end" /></a></div>  </div>  </div>
+  <div class="views-row views-row-12 views-row-even">
+      
+  <h4>        <span><a href="/playstation-4-open-source-software-freebsd-kernel-and-webgl">PlayStation 4 — Open source software and FreeBSD kernel</a></span>  </h4>  
+  <div class="views-field views-field-field-img">        <div class="field-content"><a href="/playstation-4-open-source-software-freebsd-kernel-and-webgl"><img src="http://brioteam.com/sites/default/files/styles/left-images/public/PS4-opensource-freebsdkernel.jpg?itok=oJ1VU12F" width="388" height="127" alt="PlayStation 4 FREEBSD operating system OpenSource" title="Sony PlayStation 4 FreeBSD kernel OpenSource software" /></a></div>  </div>  </div>
+  <div class="views-row views-row-13 views-row-odd">
+      
+  <h4>        <span><a href="/poor-mans-spotify-good-spotify-alternative-linux-geeks">Poor Man’s Spotify — Good spotify alternative for Linux Geeks</a></span>  </h4>  
+  <div class="views-field views-field-field-img">        <div class="field-content"><a href="/poor-mans-spotify-good-spotify-alternative-linux-geeks"><img src="http://brioteam.com/sites/default/files/styles/left-images/public/GoodSpotifyAlternativeForLinux.jpg?itok=oDQUuoNL" width="388" height="127" alt="Good spotify Alternative for Linux" title="Good spotify Alternative for Linux" /></a></div>  </div>  </div>
+  <div class="views-row views-row-14 views-row-even">
+      
+  <h4>        <span><a href="/kde-connect-merges-phone-and-desktop">KDE Connect Merges Phone and Desktop</a></span>  </h4>  
+  <div class="views-field views-field-field-img">        <div class="field-content"><a href="/kde-connect-merges-phone-and-desktop"><img src="http://brioteam.com/sites/default/files/styles/left-images/public/KdeConnect.jpg?itok=ZtuxvvFL" width="388" height="127" alt="Connect Ubuntu Linux with Your Android Mobile KDE Connect" title="Connect Ubuntu Linux with Your Android Mobile KDE Connect" /></a></div>  </div>  </div>
+  <div class="views-row views-row-15 views-row-odd">
+      
+  <h4>        <span><a href="/how-install-teamspeak-3-server-linux" class="active">How to install TeamSpeak 3 server on Linux</a></span>  </h4>  
+  <div class="views-field views-field-field-img">        <div class="field-content"><a href="/how-install-teamspeak-3-server-linux" class="active"><img src="http://brioteam.com/sites/default/files/styles/left-images/public/HowToInstallTeamSpeak3ServerOnLinux.jpg?itok=kGVsi_aT" width="388" height="127" alt="Tutorial how to install TS3 server on linux" title="Tutorial how to install TS3 server on linux" /></a></div>  </div>  </div>
+  <div class="views-row views-row-16 views-row-even">
+      
+  <h4>        <span><a href="/linux-mint-versus-ubuntu">Linux Mint Versus Ubuntu — Which Variant is Right For You?</a></span>  </h4>  
+  <div class="views-field views-field-field-img">        <div class="field-content"><a href="/linux-mint-versus-ubuntu"><img src="http://brioteam.com/sites/default/files/styles/left-images/public/UbuntuVersusLinuxMint.jpg?itok=QnbPXdyS" width="388" height="127" alt="Which is best Ubuntu Versus Linux Mint Operating System reviews" title="Linux mint vs Ubuntu Best Operating system" /></a></div>  </div>  </div>
+  <div class="views-row views-row-17 views-row-odd">
+      
+  <h4>        <span><a href="/3-tips-speed-up-your-ubuntu">Ubuntu — 3 Simple Tips to Speed Up Your Old Computer</a></span>  </h4>  
+  <div class="views-field views-field-field-img">        <div class="field-content"><a href="/3-tips-speed-up-your-ubuntu"><img src="http://brioteam.com/sites/default/files/styles/left-images/public/3-Simple-Tips-To-Make-Your-Ubuntu-Faster.jpg?itok=_-J_m-DA" width="388" height="127" alt="Make your Ubuntu work Faster with these 3 Simple Steps" title="Tweak your Ubuntu with these 3 Simple tips" /></a></div>  </div>  </div>
+  <div class="views-row views-row-18 views-row-even">
+      
+  <h4>        <span><a href="/mumble-versus-teamspeak-3">Mumble versus TeamSpeak 3</a></span>  </h4>  
+  <div class="views-field views-field-field-img">        <div class="field-content"><a href="/mumble-versus-teamspeak-3"><img src="http://brioteam.com/sites/default/files/styles/left-images/public/mumblevsts3.png?itok=_ic_aBxk" width="388" height="127" alt="Best Mumble 3 or TeamSpeak 3 best Voip Software" title="Mumble 3 vs TeamSpeak 3 which is the best for gaming VOIP" /></a></div>  </div>  </div>
+  <div class="views-row views-row-19 views-row-odd">
+      
+  <h4>        <span><a href="/how-host-mumble-murmur-server-linux">How to host a Mumble Murmur server on Linux</a></span>  </h4>  
+  <div class="views-field views-field-field-img">        <div class="field-content"><a href="/how-host-mumble-murmur-server-linux"><img src="http://brioteam.com/sites/default/files/styles/left-images/public/HowToHostMumbleServer.png?itok=RQmns9uD" width="388" height="127" alt="How To Host Murmur Mumble Linux Server" title="Tutorial How To host Murmur Mumble Linux Server" /></a></div>  </div>  </div>
+  <div class="views-row views-row-20 views-row-even">
+      
+  <h4>        <span><a href="/valve-announces-linux-based-steamos">Valve Announces Linux-Based SteamOS</a></span>  </h4>  
+  <div class="views-field views-field-field-img">        <div class="field-content"><a href="/valve-announces-linux-based-steamos"><img src="http://brioteam.com/sites/default/files/styles/left-images/public/SteamOSannouncement-LinuxBased.png?itok=j19kT-_1" width="388" height="127" alt="Linux based SteamOS for gamers developed by Valve" title="Linux based SteamOS for gamers developed by Valve" /></a></div>  </div>  </div>
+  <div class="views-row views-row-21 views-row-odd">
+      
+  <h4>        <span><a href="/how-have-perfect-conversation-stranger">How to have a perfect conversation with a stranger</a></span>  </h4>  
+  <div class="views-field views-field-field-img">        <div class="field-content"><a href="/how-have-perfect-conversation-stranger"><img src="http://brioteam.com/sites/default/files/styles/left-images/public/HowToPerfectConversationWithStrangerSocialSkills.png?itok=7i7-Ib49" width="388" height="127" alt="Social Skills - Have a perfect conversation with stranger" title="Social Skills - Have a perfect conversation with stranger" /></a></div>  </div>  </div>
+  <div class="views-row views-row-22 views-row-even">
+      
+  <h4>        <span><a href="/experience-life-escaping-comfort-zone">Experience Life by Escaping the Comfort Zone</a></span>  </h4>  
+  <div class="views-field views-field-field-img">        <div class="field-content"><a href="/experience-life-escaping-comfort-zone"><img src="http://brioteam.com/sites/default/files/styles/left-images/public/EscapeTheComfortZone.png?itok=DBdl8Q8T" width="388" height="127" alt="How to find the right path to your life and how to escape your comfort zone" title="How to find the right path to your life and how to escape your comfort zone" /></a></div>  </div>  </div>
+  <div class="views-row views-row-23 views-row-odd">
+      
+  <h4>        <span><a href="/under-hood-look-linux-what-powers-playstation-4">Under the Hood — a Look at Linux &amp; What Powers the PlayStation 4</a></span>  </h4>  
+  <div class="views-field views-field-field-img">        <div class="field-content"><a href="/under-hood-look-linux-what-powers-playstation-4"><img src="http://brioteam.com/sites/default/files/styles/left-images/public/WhatPowersThePlayStation4.jpg?itok=4AyIitVv" width="388" height="127" alt="Under the hood of PS4 - FreeBSD and Linux opensource" title="What is powering Playstation 4 - A look at Linux, FreeBSD and OpenSource" /></a></div>  </div>  </div>
+  <div class="views-row views-row-24 views-row-even">
+      
+  <h4>        <span><a href="/garry%E2%80%99s-mod-giving-error-linux"> Garry’s Mod Giving Error On Linux! </a></span>  </h4>  
+  <div class="views-field views-field-field-img">        <div class="field-content"><a href="/garry%E2%80%99s-mod-giving-error-linux"><img src="http://brioteam.com/sites/default/files/styles/left-images/public/GmodGivingErrorOnLinux.jpg?itok=54yGdLOc" width="388" height="127" alt="Gmod Giving me error 64-bit on linux" title="Gmod Giving me error 64-bit on linux" /></a></div>  </div>  </div>
+  <div class="views-row views-row-25 views-row-odd views-row-last">
+      
+  <h4>        <span><a href="/how-backup-your-mysql-database-mysqldump-command-line">How to backup your MySQL database with MySQLdump command line </a></span>  </h4>  
+  <div class="views-field views-field-field-img">        <div class="field-content"><a href="/how-backup-your-mysql-database-mysqldump-command-line"><img src="http://brioteam.com/sites/default/files/styles/left-images/public/HowToBackUPyourMYSQLdatabasewithMySQLdump.jpg?itok=guVgROD9" width="388" height="127" alt="How to Backup Your MySQL database with MySQLdump command" title="How to Backup Your MySQL database with MySQLdump command" /></a></div>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+</div>
+  </div>
+        </div><!-- /#sidebar-first -->
+                <div id="content" class="eight columns">
+                                
+             
+            
+            <div id="main">
+      
+                                
+                                
+                                <h1 class="title" id="page-title">
+                  How to install TeamSpeak 3 server on Linux                </h1>
+                                
+                                
+                                <div class="tabs">
+                                  </div>
+                                
+                                
+                                
+                  <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div  class="ds-1col node node-wp-blog node-promoted view-mode-full  clearfix">
+
+  
+  <div class="">
+    <div class="field field-name-submitted-by field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even">Submitted 1 year 5 days ago by <span class="username">Ariani</span>.</div></div></div><div class="field field-name-field-img field-type-image field-label-hidden"><div class="field-items"><div class="field-item even"><img src="http://brioteam.com/sites/default/files/HowToInstallTeamSpeak3ServerOnLinux.jpg" width="783" height="257" alt="Tutorial how to install TS3 server on linux" title="Tutorial how to install TS3 server on linux" /></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>TeamSpeak 3 was released in 2011. It has many good features compared to older version TeamSpeak 2. It's good for clans and gaming communities, take it to the next level with your community. But why not for offices and work also, Where you have to be connected with your work mates 24/7. This is one way to have secure and controlled environment for your work or community. This guide will lead you how to install TeamSpeak 3 for linux server or home computer.</p>
+<p><em>You May Also Be Interested In: <a href="http://brioteam.com/mumble-versus-teamspeak-3" title="Which one is the  best voip Mumble or Teamspeak 3?">"Mumble Versus TeamSpeak 3"</a></em></p>
+<h3>Tutorial</h3>
+<p>We have to create a user in linux system dedicated for TeamSpeak 3 server running. Let's start with creating user, password and setting the file permissions right.</p>
+<p><code># useradd teamspeak3-user</code></p>
+<p>Great we have created a user to our linux system. Now let's add password for our user. Note: you have to add the same password twice.</p>
+<p><code># passwd teamspeak3-user</code></p>
+<p>Now we have added password to our user. Now let's change file permission of our user home directory to 755. You can do this by running the following command.</p>
+<p><code># chmod 755 /home/teamspeak3-user</code></p>
+<p>The user is created and file permissions set you will need to switch to that user we just created.</p>
+<p><code># su teamspeak3-user</code></p>
+<p>Now it's time to download the latest version of TeamSpeak3 server. You can grab the latest release from here: <a href="http://www.teamspeak.com/?page=downloads" title="TeamSpeak 3 downloads">http://www.teamspeak.com/?page=downloads</a> . We're going to download the latest version with wget, by running the following command. (You can replace the url with your own, since in this tutorial we're using 64-bit version.)</p>
+<p><code># wget http://ftp.4players.de/pub/hosted/ts3/releases/3.0.7.1/teamspeak3-server_linux-amd64-3.0.7.1.tar.gz</code></p>
+<p>Once we've downloaded the package, we have to unpack it with this command.</p>
+<p><code># tar -zxvf teamspeak3-server_linux-amd64-3.0.7.1.tar.gz</code></p>
+<p>Delete the downloaded file since we have unpacked it's content, we no longer need it.</p>
+<p><code># rm teamspeak3-server_linux-amd64-3.0.7.1.tar.gz</code></p>
+<p>for our eyes sake, we can now change the unpackaged folder name to something simplifier, like teamspeak3-server.</p>
+<p><code># mv teamspeak3-server_linux-amd64 teamspeak3-server</code></p>
+<p>Let's go in our teamspeak3-server dir.</p>
+<p><code># cd teamspeak3-server</code></p>
+<p>Now it's our time to create "ts3server.ini" file where you can later on configure ip address and port number to use, if needed.</p>
+<p><code># ./ts3server_minimal_runscript.sh createinifile=1</code></p>
+<p>You will get some information including your master token key. Copy it by highlighting it and using normal copy ctrl+c. Now you need to edit the ts3server.ini file. You can download this file from the root /home/teamspeak3-user/teamspeak3-server folder on your server. For beginners, you just need to add the ip address for the voice connection. Upload the file and then start the server, with the following command.</p>
+<p><code># ./ts3server_startscript.sh start</code></p>
+<p>That's it, everything should work fine now.</p>
+</div></div></div><div class="field field-name-related-content field-type-ds field-label-above"><div class="field-label">Related Content:&nbsp;</div><div class="field-items"><div class="field-item even"><div class="view view-relatedcontent view-id-relatedcontent view-display-id-block view-dom-id-76b9cde56eb4156cbf54068cbb9028e6">
+        
+  
+  
+      <div class="view-content">
+      <table class="views-view-grid cols-3">
+  
+  <tbody>
+          <tr class="row-1 row-first row-last">
+                  <td class="col-1 col-first">
+              
+  <div class="views-field views-field-field-img">        <div class="field-content"><a href="/five-steps-make-faster-old-computer-linux-mint"><img src="http://brioteam.com/sites/default/files/styles/medium/public/HowToMakeYourLinuxMintWorkFasterFiveStepsTutorial.png?itok=xACdUBTg" width="220" height="72" alt="Five Steps to speed up your Linux Mint" title="Five Steps to speed up your Linux Mint" /></a></div>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/five-steps-make-faster-old-computer-linux-mint">Linux Mint 17 — 5 Steps to Make Qiana Faster on Old Computer</a></span>  </div>          </td>
+                  <td class="col-2">
+              
+  <div class="views-field views-field-field-img">        <div class="field-content"><a href="/how-encrypt-files-command-line-ccrypt"><img src="http://brioteam.com/sites/default/files/styles/medium/public/HowToEncryptFilesLinuxCCrypt.png?itok=X6zgLU8X" width="220" height="72" alt="How to Encrypt Files from Command line with ccrypt" title="How to Encrypt Files from Command line with ccrypt" /></a></div>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/how-encrypt-files-command-line-ccrypt">How to Encrypt Files from Command line with ccrypt</a></span>  </div>          </td>
+                  <td class="col-3 col-last">
+              
+  <div class="views-field views-field-field-img">        <div class="field-content"><a href="/linux-versus-freebsd-comprehensive-comparison"><img src="http://brioteam.com/sites/default/files/styles/medium/public/LinuxVSfreebsdWhichOneIsBetter2.jpg?itok=t0z5nKAQ" width="220" height="72" alt="Linux vs FreeBSD - Significant differences between these two operating systems" title="Linux vs FreeBSD - Significant differences between these two operating systems" /></a></div>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/linux-versus-freebsd-comprehensive-comparison">Linux versus FreeBSD — A Comprehensive Comparison</a></span>  </div>          </td>
+              </tr>
+      </tbody>
+</table>
+    </div>
+  
+  
+  
+  
+  
+  
+</div></div></div></div><ul class="links inline"><li class="sharethis first last"><span class="sharethis-buttons"><div class="sharethis-wrapper"><span st_url="http://brioteam.com/how-install-teamspeak-3-server-linux" st_title="How to install TeamSpeak 3 server on Linux" class="st_facebook_button" displaytext="facebook"></span>
+<span st_url="http://brioteam.com/how-install-teamspeak-3-server-linux" st_title="How to install TeamSpeak 3 server on Linux" class="st_twitter_button" displaytext="twitter"></span>
+<span st_url="http://brioteam.com/how-install-teamspeak-3-server-linux" st_title="How to install TeamSpeak 3 server on Linux" class="st_googleplus_button" displaytext="googleplus"></span>
+<span st_url="http://brioteam.com/how-install-teamspeak-3-server-linux" st_title="How to install TeamSpeak 3 server on Linux" class="st_linkedin_button" displaytext="linkedin"></span>
+<span st_url="http://brioteam.com/how-install-teamspeak-3-server-linux" st_title="How to install TeamSpeak 3 server on Linux" class="st_email_button" displaytext="email"></span>
+</div></span></li>
+</ul><div class="field field-name-taxonomy-wp-blog-tags field-type-taxonomy-term-reference field-label-above"><div class="field-label">Blog tags:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="/tag/linux">linux</a></div><div class="field-item odd"><a href="/tag/server">server</a></div><div class="field-item even"><a href="/tag/tutorial">tutorial</a></div></div></div><div class="field field-name-google-sponsors field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- BrioBriobeforecomments --><p><ins class="adsbygoogle"     style="display:inline-block;width:728px;height:90px"     data-ad-client="ca-pub-5070439140940212"     data-ad-slot="7470015284"></ins></p>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div></div></div><div class="field field-name-disqus-comments field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><div id="disqus_thread"><noscript><p><a href="http://brioteam.disqus.com/?url=http%3A%2F%2Fbrioteam.com%2Fhow-install-teamspeak-3-server-linux">View the discussion thread.</a></p></noscript></div></div></div></div>  </div>
+
+</div>
+
+  </div>
+</div>
+  </div>
+                                
+            </div>
+        
+        </div><!-- /#content -->
+        
+
+                              <!-- #sidebar-second -->
+        <div id="sidebar" class="three columns">
+              <div class="region region-sidebar-second">
+    <div id="block-block-4" class="block block-block">
+
+    
+  <div class="content">
+    <div class="block block-views" style="text-align:center;">
+<h2>— FOLLOW US — </h2>
+<p>You can find us on <a href="https://www.facebook.com/BrioTeam" title="BT Social Facebook" alt="BT Social Facebook">Facebook</a>, <a href="https://plus.google.com/+Brioteam" title="BT Social Google Plus" alt="BT Social Google Plus">Google+</a> and <a href="https://twitter.com/BrioTeam" title="BT Social Twitter" alt="BT Social Twitter">Twitter</a>.<br />
+Subscribe to our <a href="http://feeds.feedburner.com/BrioTeam" title="Brio Team RSS feed">RSS Feed</a>.
+</div>
+  </div>
+</div>
+<div id="block-block-3" class="block block-block">
+
+    
+  <div class="content">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- BrioNewNewDouble --><p><ins class="adsbygoogle"     style="display:inline-block;width:300px;height:600px"     data-ad-client="ca-pub-5070439140940212"     data-ad-slot="4705133686"></ins></p>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>  </div>
+</div>
+  </div>
+        </div><!-- /#sidebar-second -->
+        
+        <div class="clear"></div>
+        
+                </div>
+        <div class="clear"></div>
+  
+        <div id="footer" class="sixteen columns clearfix">
+        
+            <div class="one_third">
+                        </div>
+            
+            <div class="one_third">
+                        </div>
+            
+            <div class="one_third last">
+                        </div>
+    
+            <div class="clear"></div>
+            
+              <div class="region region-footer">
+    <div id="block-block-2" class="block block-block">
+
+    
+  <div class="content">
+    <div class="three columns">
+<h3>About us</h3>
+<h1>Brio Team</h1>
+<p>Brio Team is community based website dedicated to such categories as Linux computing, servers, social skills, life &amp; many more. We provide weekly basis a new articles while keeping the balance between our geekyness and life itself.<br />
+<a href="http://brioteam.com/content/about-brio-team" title="About" alt="About Brio Team">Read more</a>
+</div>
+<div class="three columns">
+<h3>Website</h3>
+<ul>
+<li><a href="/" title="Frontpage">Home / News</a></li>
+<li><a href="http://brioteam.com/about-brio-team" title="About our website">About</a></li>
+<li><a href="http://brioteam.com/content/submit-tip" title="Contact us / Submit a tip">Submit link</a></li>
+</ul>
+</div>
+<div class="three columns">
+<h3>Top Articles</h3>
+<ul>
+<li><a href="http://brioteam.com/how-install-teamspeak-3-server-linux">How to Install TeamSpeak 3 server on Linux</a></li>
+<li><a href="http://brioteam.com/how-host-mumble-murmur-server-linux">How to Host MurMur (mumble) server on Linux</a></li>
+<li><a href="http://brioteam.com/how-install-tightvnc-server-linux">Install TightVNC for Linux</a></li>
+</ul>
+</div>
+<div class="six columns">
+<h3>Popular Tags</h3>
+<div id="tagmenu">
+<ul>
+<li><a href="http://brioteam.com/tag/addons" class="button lightgreen">Addons</a></li>
+<li><a href="http://brioteam.com/tag/android" class="button lightgreen">Android</a></li>
+<li><a href="http://brioteam.com/tag/bsd" class="button lightgreen">BSD</a></li>
+<li><a href="http://brioteam.com/tag/chrome" class="button lightgreen">Chrome</a></li>
+<li><a href="http://brioteam.com/tag/firefox" class="button lightgreen">Firefox</a></li>
+<li><a href="http://brioteam.com/tag/games" class="button lightgreen">Games</a></li>
+<li><a href="http://brioteam.com/tag/life" class="button lightgreen">Life</a></li>
+<li><a href="http://brioteam.com/tag/linux" class="button lightgreen">Linux</a></li>
+<li><a href="http://brioteam.com/tag/mint" class="button lightgreen">Linux Mint</a></li>
+<li><a href="http://brioteam.com/tag/multitasking" class="button lightgreen">Multitasking</a></li>
+<li><a href="http://brioteam.com/tag/mysql" class="button lightgreen">MySQL</a></li>
+<li><a href="http://brioteam.com/tag/self-improvement" class="button lightgreen">Self-improvement</a></li>
+<li><a href="http://brioteam.com/tag/tools" class="button lightgreen">Tools</a></li>
+<li><a href="http://brioteam.com/tag/versus" class="button lightgreen">Versus</a></li>
+</ul>
+</div>
+</div>
+<div style="clear: both; padding: 20px; border-top: 1px solid #d6d6d6; font-size: .9em;">© 2014 <a href="/" title="home website of brioteam">BrioTeam.com</a>. All Rights Reserved.</div>
+  </div>
+</div>
+  </div>
+ 
+            
+            <div class="clear"></div>        
+        </div>
+    </div>
+</div> <!-- /#wrap -->
+  <script type="text/javascript" src="http://brioteam.com/sites/default/files/js/js_VU7P4CTgUZdF2SyFko5LLAg9ZK0OSVjXVaAFnTLgVt0.js"></script>
+</body>
+</html>
